@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/wavymav/expressFitness/issues"
   },
-  "homepage": "https://github.com/wavymav/expressFitness#readme"
+  "homepage": "https://github.com/wavymav/expressFitness#readme",
+  "dependencies": {}
 }
