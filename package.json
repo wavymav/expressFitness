@@ -16,5 +16,7 @@
     "url": "https://github.com/wavymav/expressFitness/issues"
   },
   "homepage": "https://github.com/wavymav/expressFitness#readme",
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.13.3"
+  }
 }
