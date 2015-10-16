@@ -1,4 +1,11 @@
 extends ./layout.jade
 block content
     each post in posts
-        h1 #{post.title}
+        section.post
+          .container
+            .row
+              .col-lg-8.col-lg-offset-2.text-center
+                h2.section-heading #{post.title}
+                hr.light
+                p.text-faded #{post.body}
+                a(href='/blog/' + post.title).btn.btn-default.btn-xl Read more!
