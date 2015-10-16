@@ -8,9 +8,12 @@ var dummyData = require('./dummy.json');
 
 var app = express();
 
+app.set('view engine', 'jade');
+app.set('views', __dirname + '/views');
+
 // route for the home/root directory
 app.get('/', (req, res) => {
-    res.send('<h1>Home!</h1>');
+    res.render('index');
 });
 
 // route for dummyData blog post
