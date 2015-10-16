@@ -23,15 +23,17 @@ app.set('views', __dirname + '/views');
 
 // route for the home/root directory
 app.get('/', (req, res) => {
-    res.render('index');
+    var path = req.path;
+    res.render('index', { path : path});
 });
 
 // route for dummyData blog post
 app.get('/blog/:title?', (req, res) => {
     var title = req.params.title;
+    var path = req.path;
 
     // handling response
-    if (!title) {
+    if (path === '/blog') {
         res.status(503);
         res.render('blog', { posts : dummyDataList });
     } else {
