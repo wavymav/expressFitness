@@ -8,6 +8,10 @@ var dummyData = require('./dummy.json');
 
 var app = express();
 
+// express static server middleware to serve static files from /client
+app.use('/static', express.static(__dirname + '/client'));
+
+// view engine & file location for viewss
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 
