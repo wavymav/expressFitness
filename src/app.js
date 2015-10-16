@@ -14,10 +14,17 @@ app.get('/', (req, res) => {
 });
 
 // route for dummyData blog post
-app.get('/dummy/:title', (req, res) => {
+app.get('/dummy/:title?', (req, res) => {
     var title = req.params.title;
-    var post = dummyData[title];
-    res.send(post);
+
+    // handling response
+    if (!title) {
+        res.status(503);
+        res.send("This page is currently undergoing maintenance");
+    } else {
+        var post = dummyData[title];
+        res.send(post);
+    }
 });
 
 // app will listen on localhost:3000
