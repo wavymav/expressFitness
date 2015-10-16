@@ -42,6 +42,15 @@ app.get('/blog/:title?', (req, res) => {
     }
 });
 
+// route for dummy json data
+app.get('/posts', (req, res) => {
+    if (req.query.raw) {
+        res.json(dummyData);
+    } else {
+        res.json(dummyDataList);
+    }
+});
+
 // app will listen on localhost:3000
 app.listen(3000, () => {
     console.log('Client server running on http://localhost:3000/');
