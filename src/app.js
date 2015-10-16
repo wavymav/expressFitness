@@ -26,7 +26,7 @@ app.get('/dummy/:title?', (req, res) => {
         res.send("This page is currently undergoing maintenance");
     } else {
         var post = dummyData[title];
-        res.send(post);
+        res.render('post', { post : post });
     }
 });
 
