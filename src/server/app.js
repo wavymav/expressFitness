@@ -6,6 +6,12 @@
 var express = require('express');
 var dummyData = require('./dummy.json');
 
+// creating an [] of dummyData {}'s
+var dummyDataList = Object.keys(dummyData).map((value) => {
+    return dummyData[value];
+});
+
+// express app
 var app = express();
 
 // express static server middleware to serve static files from /client
@@ -21,13 +27,13 @@ app.get('/', (req, res) => {
 });
 
 // route for dummyData blog post
-app.get('/dummy/:title?', (req, res) => {
+app.get('/blog/:title?', (req, res) => {
     var title = req.params.title;
 
     // handling response
     if (!title) {
         res.status(503);
-        res.send("This page is currently undergoing maintenance");
+        res.render('blog', { posts : dummyDataList });
     } else {
         var post = dummyData[title] || {};
         res.render('post', { post : post });
