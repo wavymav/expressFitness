@@ -10,12 +10,14 @@ var app = express();
 
 // route for the home/root directory
 app.get('/', (req, res) => {
-    res.send('<h1>Home</h1>');
+    res.send('<h1>Home!</h1>');
 });
 
-// route for dummyData
-app.get('/Dummy', (req, res) => {
-    res.send(dummyData);
+// route for dummyData blog post
+app.get('/dummy/:title', (req, res) => {
+    var title = req.params.title;
+    var post = dummyData[title];
+    res.send(post);
 });
 
 // app will listen on localhost:3000

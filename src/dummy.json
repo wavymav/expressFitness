@@ -1,4 +1,14 @@
 {
-    "title" : "Work Out With Me!",
-    "body" : "Selvage food truck Bushwick fanny pack, pop-up shabby chic Shoreditch."
+    "Work Out With Me!" : {
+        "title" : "Work Out With Me!",
+        "body" : "Selvage food truck Bushwick fanny pack, pop-up shabby chic Shoreditch."
+    },
+    "Work Out Solo!" : {
+        "title" : "Work Out Solo!",
+        "body" : "Selvage food truck Bushwick fanny pack, pop-up shabby chic Shoreditch."
+    },
+    "Work Out Together!" : {
+        "title" : "Work Out Together!",
+        "body" : "Selvage food truck Bushwick fanny pack, pop-up shabby chic Shoreditch."
+    }
 }
