@@ -2,17 +2,17 @@
 /* jshint esnext: true */
 
 'use strict';
-
-var express = require('express');
-var dummyData = require('./dummy.json');
+// getting an error for import at the moment
+const express = require('express');
+const dummyData = require('./dummy.json');
 
 // creating an [] of dummyData {}'s
-var dummyDataList = Object.keys(dummyData).map((value) => {
+let dummyDataList = Object.keys(dummyData).map((value) => {
     return dummyData[value];
 });
 
 // express app
-var app = express();
+let app = express();
 
 // express static server middleware to serve static files from /client
 app.use('/static', express.static(__dirname + '/client'));
@@ -23,21 +23,21 @@ app.set('views', __dirname + '/views');
 
 // route for the home/root directory
 app.get('/', (req, res) => {
-    var path = req.path;
+    let path = req.path;
     res.render('index', { path : path});
 });
 
 // route for dummyData blog post
 app.get('/blog/:title?', (req, res) => {
-    var title = req.params.title;
-    var path = req.path;
+    let title = req.params.title;
+    let path = req.path;
 
     // handling response
     if (path === '/blog') {
         res.status(503);
         res.render('blog', { posts : dummyDataList });
     } else {
-        var post = dummyData[title] || {};
+        let post = dummyData[title] || {};
         res.render('post', { post : post });
     }
 });
